@@ -32,29 +32,6 @@ All HTTP requests to API endpoints require authentication and authorization. The
 | ----------- | ------- | :----- | ---------------------------------- |
 | X-HK-APIKEY | API-KEY | string | The API Access Key you applied for |
 
-#### Time-base security requirement
-
->📘 If your timestamp is ahead of serverTime it needs to be within 1 second + serverTime
-
->The logic of this parameter is as follows:
-
-```java
- if (timestamp < (serverTime + 1000) && (serverTime - timestamp) <= recvWindow)
-    // process request
-  } else {
-    // reject request
-  }
-```
-
->📘 A relatively small recvWindow (5000 or less) is recommended!
-
-* For a SIGNED endpoint, an additional parameter "timestamp" needs to be included in the request. This timestamp is in milliseconds and reflect the time when the request was initiated.
-* An optional parameter (not mandatory) `recvWindow` can be used to specify the validity period of the request in milliseconds. If recvWindow is not sent as part of the request, the default value is **5000**
-* Trading and timeliness are closely interconnected. Network can sometimes be unstable or unreliable, which can lead to inconsistent times when requests are sent to the server.
-* With recvWindow, you can specify how many milliseconds the request is valid, otherwise it will be rejected by the server.
-
-<br>
-
 ***Example 1: In queryString***
 
 * queryString:
@@ -116,6 +93,65 @@ Shell standard output:
 <aside class="notice">
 Note the difference in Example 3, where there is no & between "GTC" and "quantity = 1".
 </aside>
+
+#### Two-Factor Authentication (2FA, optional)
+
+* Certain API endpoints have been enhanced to support two-factor authentication (2FA) via the twoFaToken field.
+* When 2FA is enabled for a user, each relevant request‘s header must include a valid twoFaToken for verification.
+
+The following headers should be added to HTTP requests:
+
+| Key            | Value | Type   | Description                                                                |
+| -------------- | ----- | :----- | -------------------------------------------------------------------------- |
+| X-TWO-FA-TOKEN | token | STRING | 2FA token required when 2FA is enabled. <br />Optional if 2FA is disabled. |
+
+**Request Logic**
+
+When 2FA is Enabled
+
+* If 2FA is enabled but the request does not include twoFaToken, the API will return an error indicating that 2FA verification is required.
+* Each twoFaToken is **valid for 30 seconds** and can only be **used once** during its validity period.
+
+When 2FA is Disabled
+
+* The request verification logic remains unchanged.
+* If a twoFaToken is provided in the request, it will be ignored.
+
+**Affected Endpoints**
+
+The following endpoints have options to add the twoFaToken parameter and now invoke the Security Service for 2FA validation:
+
+| Endpoint                   | Method | Description                          |
+| -------------------------- | ------ | ------------------------------------ |
+| `/whitelist/verify`        | GET    | Get micro-payment depositing address |
+| `/account/withdraw`        | POST   | Digital asset withdrawal             |
+| `/account/fiat/withdraw`   | POST   | Fiat withdrawal                      |
+| `/whitelist/walletSigning` | POST   | Wallet signing verification          |
+
+<br />
+
+#### Time-base security requirement
+
+>📘 If your timestamp is ahead of serverTime it needs to be within 1 second + serverTime
+
+>The logic of this parameter is as follows:
+
+```java
+ if (timestamp < (serverTime + 1000) && (serverTime - timestamp) <= recvWindow)
+    // process request
+  } else {
+    // reject request
+  }
+```
+
+>📘 A relatively small recvWindow (5000 or less) is recommended!
+
+* For a SIGNED endpoint, an additional parameter "timestamp" needs to be included in the request. This timestamp is in milliseconds and reflect the time when the request was initiated.
+* An optional parameter (not mandatory) `recvWindow` can be used to specify the validity period of the request in milliseconds. If recvWindow is not sent as part of the request, the default value is **5000**
+* Trading and timeliness are closely interconnected. Network can sometimes be unstable or unreliable, which can lead to inconsistent times when requests are sent to the server.
+* With recvWindow, you can specify how many milliseconds the request is valid, otherwise it will be rejected by the server.
+
+<br>
 
 ### Getting Started with Postman
 

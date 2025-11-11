@@ -537,11 +537,14 @@ a {
 
   table {
     margin-bottom: 1em;
+    border-collapse: collapse;
     overflow: auto;
     th,td {
       text-align: left;
       vertical-align: top;
       line-height: 1.6;
+      border: 1px solid #ccc; // 横竖分割线
+      padding: 8px 10px;
       code {
         white-space: nowrap;
       }

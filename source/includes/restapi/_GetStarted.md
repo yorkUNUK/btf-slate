@@ -216,10 +216,24 @@ if __name__ == '__main__':
     * **Secret key**: The key used for signature authentication encryption (visible to the application only)
 
 * Users have to assign permissions to API-KEY. There are two kinds of permissions,
-    * **READ** read permission is used for data query interfaces such as order query, transaction query, etc.
-    * **TRADE** read-write permission is used for order placing, order cancelling, including transfer permission whereby user can transfer between subaccounts under the same main trading account
-
-* Both private REST and WebSocket modes require users to authenticate the transaction through the API-KEY passed in the API header. Refer to the following Authentication chapter for the signature algorithm of the API-KEY.
+    * **READ-ONLY PERMISSION**: read permission is used for data query interfaces such as order query, transaction query, etc.
+    * **READ/WRITE PERMISSION**:
+        * **Allow Withdrawal**: control whether the API key allow withdrawing VA.
+            * _/api/v1/account/withdraw_
+        * **Allow Trading**: control whether the API key allow trading.
+            * _/api/v1/spot/order_
+            * _/api/v1.1/spot/order_
+            * _/api/v1/spot/batchOrders_
+            * _/api/v1/spot/openOrders_
+            * _/api/v1/spot/cancelOrderByIds_
+        * **Allow wallet address whitelist**: control whether the API key can access endpoints used for the wallet whitelist process.
+            * _/api/v1/whitelist/walletSigning_
+            * _/api/v1/whitelist/verify_
+            * _/api/v1/account/deposit/address_
+        * **Allow internal transfer**: control whether the API key allow internal transfer.
+            * _/api/v1/account/assetTransfer_
+        * **Allow fiat withdrawal**: control whether the API key allow withdrawing fiat.
+            * _/api/v1/account/fiat/withdraw_
 
 <aside class="notice">
 📘 Please refer to the following URL for Sub-accounts and API Keys management rules: <br />

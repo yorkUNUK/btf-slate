@@ -10,6 +10,16 @@ toc_footers:
 includes:
   - restapi/GetStarted
   - restapi/Authentication
+  - restapi/orderManagement/testNewOrder
+  - restapi/orderManagement/createOrderV1_0
+  - restapi/orderManagement/createOrderV1_1
+  - restapi/orderManagement/batchOrdersV1_1
+  - restapi/orderManagement/cancelOrder
+  - restapi/orderManagement/cancelAllOpenOrdersBySymbol
+  - restapi/orderManagement/cancelMultipleOrdersByOrderId
+  - restapi/orderManagement/queryOrder
+  - restapi/orderManagement/getCurrentOpenOrders
+  - restapi/orderManagement/getAllTradedOrders
   - errors
 
 search: true
