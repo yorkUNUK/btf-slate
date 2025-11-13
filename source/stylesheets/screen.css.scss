@@ -541,7 +541,7 @@ a {
     overflow: auto;
     th,td {
       text-align: left;
-      vertical-align: top;
+      vertical-align: middle;
       line-height: 1.6;
       border: 1px solid #ccc; // 横竖分割线
       padding: 8px 10px;
@@ -553,11 +553,12 @@ a {
     th {
       padding: 5px 10px;
       border-bottom: 1px solid #ccc;
-      vertical-align: bottom;
+      vertical-align: middle;
     }
 
     td {
       padding: 10px;
+      vertical-align: middle;
     }
 
     tr:last-child {
@@ -663,6 +664,10 @@ a {
 
     margin: 0 $examples-margin 0 0;
     width: $examples-width -  $examples-margin;
+
+    // restrict code height
+    max-height: 700px;
+    overflow-y: scroll;
 
     float:right;
     clear:right;

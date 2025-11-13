@@ -1,6 +1,6 @@
 ## Order Management
 
-<h3 id="test-new-order" class="has-code" style="font-size:24px;font-family:'Helvetica',sans-serif;">
+<h3 id="Test-New-Order" class="has-code" style="font-size:24px;font-family:'Helvetica',sans-serif;">
 Test New Order
 </h3>
 
@@ -27,7 +27,7 @@ The test endpoint is solely to validate the parameters of the new order, it does
 
 **Response Content**
 
-```JSON
+```json
 {}
 ```
 

@@ -20,6 +20,10 @@ includes:
   - restapi/orderManagement/queryOrder
   - restapi/orderManagement/getCurrentOpenOrders
   - restapi/orderManagement/getAllTradedOrders
+  - restapi/Account/getVIPInfo
+  - restapi/Account/getAccountInfo
+  - restapi/Account/getEODBalance
+  - restapi/Account/getAccountTradeList
   - errors
 
 search: true
