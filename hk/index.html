@@ -541,6 +541,13 @@ Get Fund Statement
 Get Fund Statement
 </a>
                           </li>
+                          <li>
+                            <a href="#Get-OPT-Order-History" class="toc-h3 toc-link" data-title="
+Get OPT Order History
+">
+Get OPT Order History
+</a>
+                          </li>
                       </ul>
                   </li>
               </ul>
@@ -5413,6 +5420,168 @@ Get Fund Statement
 <td style="text-align: left">clientOrderId</td>
 <td style="text-align: left">STRING</td>
 <td style="text-align: left">An ID defined by the client for the withdrawal order</td>
+</tr>
+</tbody></table>
+<h3 id="Get-OPT-Order-History" class="has-code" style="font-size:24px;font-family:'Helvetica',sans-serif;">
+Get OPT Order History
+</h3>
+
+<p><strong style="color:#008756;font-size:1.25em">GET</strong> <code>https://api-pro.sim.hashkeydev.com/api/v1/account/brokerage/trades</code></p>
+
+<p><strong>Weight: 5</strong></p>
+
+<p><strong>Request Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>PARAMETER</th>
+<th>TYPE</th>
+<th>Req&#39;d</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>startTime</td>
+<td>STRING</td>
+<td>Y</td>
+<td>Start timestamp</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>STRING</td>
+<td>Y</td>
+<td>End timestamp</td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>STRING</td>
+<td></td>
+<td>OPT Order ID</td>
+</tr>
+<tr>
+<td>source</td>
+<td>STRING</td>
+<td></td>
+<td>Automatic/Manual</td>
+</tr>
+<tr>
+<td>pages</td>
+<td>INTEGER</td>
+<td></td>
+<td>Enter integers 1 or 2, default to 1</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>INTEGER</td>
+<td></td>
+<td>Limit of record<br>Default: 500, Max: 1000</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>LONG</td>
+<td>Y</td>
+<td>Timestamp</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Content</strong></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SWAP704632933320630272"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Processing"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"buyAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"buyAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sellAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99.00000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sellAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-04-28 09:59:42"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Automatic"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SWAP699644019747282944"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Succeeded"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"buyAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18.00180019"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"buyAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sellAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18.00000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sellAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.99990000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-04-14 15:35:33"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Automatic"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SWAP699565941616500736"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Failed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"buyAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21.00000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"buyAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sellAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21.00000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sellAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.00000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-04-14 10:25:17"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Automatic"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th style="text-align: left"><strong>PARAMETER</strong></th>
+<th style="text-align: left"><strong>TYPE</strong></th>
+<th style="text-align: left"><strong>Example values</strong></th>
+<th style="text-align: left"><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">orderId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">SWAP509692083805077504</td>
+<td style="text-align: left">OPT Order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">buyAmount</td>
+<td style="text-align: left">STRING (decimal)</td>
+<td style="text-align: left">99999</td>
+<td style="text-align: left">Buy Amount</td>
+</tr>
+<tr>
+<td style="text-align: left">buyAsset</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">USD</td>
+<td style="text-align: left">Buy Asset</td>
+</tr>
+<tr>
+<td style="text-align: left">sellAmount</td>
+<td style="text-align: left">STRING (decimal)</td>
+<td style="text-align: left">100000</td>
+<td style="text-align: left">Sell Amount</td>
+</tr>
+<tr>
+<td style="text-align: left">sellAsset</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">USDT</td>
+<td style="text-align: left">Sell Asset</td>
+</tr>
+<tr>
+<td style="text-align: left">price</td>
+<td style="text-align: left">STRING (decimal)</td>
+<td style="text-align: left">1.11111111</td>
+<td style="text-align: left">Price</td>
+</tr>
+<tr>
+<td style="text-align: left">source</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Automatic</td>
+<td style="text-align: left">Automatic order<br>Manual order</td>
+</tr>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Succeeded</td>
+<td style="text-align: left">&quot;Processing&quot;<br>&quot;Succeeded&quot;<br>&quot;Failed&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left">updateTime</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">2025-04-10 12:52:42</td>
+<td style="text-align: left">Last Updated Time</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
