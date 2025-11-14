@@ -6,7 +6,9 @@ language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of
 
 toc_footers:
   - <a href='https://hk.sim.hashkeydev.com' target='_blank'>Try it out in sandbox</a>
-
+  - <a href='../hk'>t(:HongKong)</a>
+  - <a href='../de'>t(:german)</a>
+  
 includes:
   - restapi/GetStarted
   - restapi/Authentication
@@ -24,6 +26,7 @@ includes:
   - restapi/Account/getAccountInfo
   - restapi/Account/getEODBalance
   - restapi/Account/getAccountTradeList
+  - restapi/Account/getAccountTradeListByClId
   - errors
 
 search: true
