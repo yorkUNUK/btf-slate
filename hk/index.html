@@ -286,7 +286,7 @@
   color: #859900;
 }
     </style>
-    <link href="../stylesheets/screen-9a30697e.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/screen-9dd5aee0.css" rel="stylesheet" media="screen" />
     <link href="../stylesheets/print-e3a9e2c4.css" rel="stylesheet" media="print" />
       <script src="../javascripts/all-efa40599.js"></script>
 
@@ -295,7 +295,7 @@
     </script>
   </head>
 
-  <body class="de de_index" data-languages="[&quot;shell&quot;]">
+  <body class="hk hk_index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -435,7 +435,7 @@
                     <a href="#order-management" class="toc-h2 toc-link" data-title="Order Management">Order Management</a>
                       <ul class="toc-list-h3">
                           <li>
-                            <a href="#test-new-order" class="toc-h3 toc-link" data-title="
+                            <a href="#Test-New-Order" class="toc-h3 toc-link" data-title="
 Test New Order
 ">
 Test New Order
@@ -506,6 +506,46 @@ Get All Traded Orders
                           </li>
                       </ul>
                   </li>
+                  <li>
+                    <a href="#account" class="toc-h2 toc-link" data-title="Account">Account</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#Get-VIP-Info" class="toc-h3 toc-link" data-title="
+Get VIP Information
+">
+Get VIP Information
+</a>
+                          </li>
+                          <li>
+                            <a href="#Get-Account-Information" class="toc-h3 toc-link" data-title="
+Get Account Information
+">
+Get Account Information
+</a>
+                          </li>
+                          <li>
+                            <a href="#Get-End-Of-Day-Balance" class="toc-h3 toc-link" data-title="
+Get End Of Day Balance
+">
+Get End Of Day Balance
+</a>
+                          </li>
+                          <li>
+                            <a href="#Get-Account-Trade-List" class="toc-h3 toc-link" data-title="
+Get Account Trade List
+">
+Get Account Trade List
+</a>
+                          </li>
+                          <li>
+                            <a href="#Get-Account-Trade-List-By-ClientOrderId" class="toc-h3 toc-link" data-title="
+Get Account Trade List By CLientOrderId
+">
+Get Account Trade List By CLientOrderId
+</a>
+                          </li>
+                      </ul>
+                  </li>
               </ul>
           </li>
           <li>
@@ -514,6 +554,8 @@ Get All Traded Orders
       </ul>
         <ul class="toc-footer">
             <li><a href='https://hk.sim.hashkeydev.com' target='_blank'>Try it out in sandbox</a></li>
+            <li><a href='../hk'>HongKong</a></li>
+            <li><a href='../glb'>Global</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -1253,7 +1295,7 @@ Note the difference in Example 3, where there is no & between "GTC" and "quantit
 <img src="../images/Authentication/postman4-eb42618a.png" alt="" /></li>
 </ol>
 <h2 id='order-management'>Order Management</h2>
-<h3 id="test-new-order" class="has-code" style="font-size:24px;font-family:'Helvetica',sans-serif;">
+<h3 id="Test-New-Order" class="has-code" style="font-size:24px;font-family:'Helvetica',sans-serif;">
 Test New Order
 </h3>
 
@@ -1336,8 +1378,8 @@ Test New Order
 </tbody></table>
 
 <p><strong>Response Content</strong></p>
-<div class="highlight"><pre class="highlight plaintext"><code>{}
-</code></pre></div>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
+</span></code></pre></div>
 <p>Empty</p>
 <h3 id="Create-Order-v1" style="font-size:24px;font-family:'Helvetica',sans-serif;">
 Create Order v1.0
@@ -3196,6 +3238,1229 @@ Get All Traded Orders
 <td>STRING</td>
 <td>EXPIRE_MAKER</td>
 <td>Self Trade Prevention Mode.<br />Enum: EXPIRE_TAKER, EXPIRE_MAKER<br />Default EXPIRE_TAKER if not specified.</td>
+</tr>
+</tbody></table>
+<h2 id='account'>Account</h2>
+<h3 id="Get-VIP-Info" class="has-code" style="font-size:24px;font-family:'Helvetica',sans-serif;">
+Get VIP Information
+</h3>
+
+<p><strong style="color:#008756;font-size:1.25em">GET</strong> <code>https://api-pro.sim.hashkeydev.com/api/v1/account/vipInfo</code></p>
+
+<p><strong>Weight: 5</strong></p>
+
+<p>Retrieve VIP Level and Trading fee rates</p>
+
+<p><strong>Request Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>PARAMETER</th>
+<th>TYPE</th>
+<th>Req&#39;d</th>
+<th>Example values</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbols</td>
+<td>STRING</td>
+<td>Y</td>
+<td>USDTUSD,XRPUSD</td>
+<td>Trading pairs</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>LONG</td>
+<td>Y</td>
+<td></td>
+<td>Timestamp</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Content</strong></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"vipLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tradeVol30Day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalAssetBal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDTUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Token"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AVAXUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDTHKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AAVEUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETHUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCHKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETHUSDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Token"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Token"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOTUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MKRUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RNDRUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETHUSDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Token"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LTCUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MATICUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNIUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDTUSDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Token"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DYDXUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LINKUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPICEUSDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST-Token"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETHHKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATOMUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LDOUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SNXUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token-Fiat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellMakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTakerFeeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"updateTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1709330424013"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th><strong>PARAMETER</strong></th>
+<th><strong>TYPE</strong></th>
+<th>Example values</th>
+<th><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>INTEGER</td>
+<td>0</td>
+<td>Status code</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>STRING</td>
+<td></td>
+<td>Error message (if any)</td>
+</tr>
+<tr>
+<td>vipLevel</td>
+<td>STRING</td>
+<td>0</td>
+<td>VIP Level</td>
+</tr>
+<tr>
+<td>tradeVol30Day</td>
+<td>STRING</td>
+<td>300000000</td>
+<td>Total trading volume in Last 30 days (USD)</td>
+</tr>
+<tr>
+<td>totalAssetBal</td>
+<td>STRING</td>
+<td>1000000000</td>
+<td>Total asset balance (USD)</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object Array</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- productType</td>
+<td>STRING</td>
+<td>Token-Token</td>
+<td>Token-Token, Token-Fiat, ST-Token</td>
+</tr>
+<tr>
+<td>- buyMakerFeeCurrency</td>
+<td>STRING</td>
+<td>BTC</td>
+<td>Buy maker fee currency</td>
+</tr>
+<tr>
+<td>- buyTakerFeeCurrency</td>
+<td>STRING</td>
+<td>BTC</td>
+<td>Buy taker fee currency</td>
+</tr>
+<tr>
+<td>- sellMakerFeeCurrency</td>
+<td>STRING</td>
+<td>USD</td>
+<td>Sell maker fee currency</td>
+</tr>
+<tr>
+<td>- sellTakerFeeCurrency</td>
+<td>STRING</td>
+<td>USD</td>
+<td>Sell taker fee currency</td>
+</tr>
+<tr>
+<td>- actualMakerRate</td>
+<td>STRING</td>
+<td>0.015</td>
+<td>Maker fee including any discount</td>
+</tr>
+<tr>
+<td>- actualTakerRate</td>
+<td>STRING</td>
+<td>0.015</td>
+<td>Taker fee including any discount</td>
+</tr>
+<tr>
+<td>updateTimeStamp</td>
+<td>STRING</td>
+<td>1709330424013</td>
+<td>Update timestamp of the request (Daily snapshot)</td>
+</tr>
+</tbody></table>
+<h3 id="Get-Account-Information" class="has-code" style="font-size:24px;font-family:'Helvetica',sans-serif;">
+Get Account Information
+</h3>
+
+<p><strong style="color:#008756;font-size:1.25em">GET</strong> <code>https://api-pro.sim.hashkeydev.com/api/v1/account</code></p>
+
+<p><strong>Weight: 5</strong></p>
+
+<p>Retrieve account balance</p>
+
+<p><strong>Request Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>PARAMETER</th>
+<th>TYPE</th>
+<th>Req&#39;d</th>
+<th>Example values</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accountId</td>
+<td>LONG</td>
+<td>Y</td>
+<td>1471090223379184384</td>
+<td>Account ID, for Master Key only (Master Key users can check sub trading account information by inputing sub trading accountId)</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>LONG</td>
+<td>Y</td>
+<td></td>
+<td>Timestamp</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Content</strong></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"333.805297855"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"free"</span><span class="p">:</span><span class="w"> </span><span class="s2">"333.775297855"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.03"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"239.2252562"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"free"</span><span class="p">:</span><span class="w"> </span><span class="s2">"239.2252562"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9775428.24"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"free"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9775428.24"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8180584.8854663502"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"free"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8177843.2054663502"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2741.68"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12684763.712318516"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"free"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12684763.712318516"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"91579.017554413172"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"free"</span><span class="p">:</span><span class="w"> </span><span class="s2">"91579.017554413172"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4014986192463421361"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th style="text-align: left"><strong>PARAMETER</strong></th>
+<th style="text-align: left"><strong>TYPE</strong></th>
+<th style="text-align: left"><strong>Example values</strong></th>
+<th style="text-align: left"><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">balances</td>
+<td style="text-align: left">Object Array</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Query an asset array</td>
+</tr>
+<tr>
+<td style="text-align: left">balances.asset</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">BTC</td>
+<td style="text-align: left">Assets</td>
+</tr>
+<tr>
+<td style="text-align: left">balances.assetId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">BTC</td>
+<td style="text-align: left">Asset ID</td>
+</tr>
+<tr>
+<td style="text-align: left">balances.assetName</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">BTC</td>
+<td style="text-align: left">Asset Name</td>
+</tr>
+<tr>
+<td style="text-align: left">balances.total</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">100.63264</td>
+<td style="text-align: left">Total available funds</td>
+</tr>
+<tr>
+<td style="text-align: left">balances.free</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">100.63264</td>
+<td style="text-align: left">Available funds</td>
+</tr>
+<tr>
+<td style="text-align: left">balances.locked</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">0</td>
+<td style="text-align: left">Frozen funds</td>
+</tr>
+<tr>
+<td style="text-align: left">userId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">4014986192463421361</td>
+<td style="text-align: left">User ID</td>
+</tr>
+</tbody></table>
+<h3 id="Get-End-Of-Day-Balance" class="has-code" style="font-size:24px;font-family:'Helvetica',sans-serif;">
+Get End Of Day Balance
+</h3>
+
+<p><strong style="color:#008756;font-size:1.25em">GET</strong> <code>https://api-pro.sim.hashkeydev.com/api/v1/account/eodBalance</code></p>
+
+<p><strong>Weight: 5</strong></p>
+
+<p>Retrieve account end of day balance</p>
+
+<p><strong>Request Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>PARAMETER</th>
+<th>TYPE</th>
+<th>Req&#39;d</th>
+<th>Example values</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accountId</td>
+<td>LONG</td>
+<td></td>
+<td>1471090223379184384</td>
+<td></td>
+</tr>
+<tr>
+<td>reportDate</td>
+<td>STRING</td>
+<td>Y</td>
+<td>2025-10-01</td>
+<td>Reporting Date format yyyy-mm-dd (Max 7 days from the past)</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>LONG</td>
+<td>Y</td>
+<td></td>
+<td>Timestamp</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Content</strong></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"333.805297855"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"free"</span><span class="p">:</span><span class="w"> </span><span class="s2">"333.775297855"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.03"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"239.2252562"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"free"</span><span class="p">:</span><span class="w"> </span><span class="s2">"239.2252562"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9775428.24"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"free"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9775428.24"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8180584.8854663502"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"free"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8177843.2054663502"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2741.68"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12684763.712318516"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"free"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12684763.712318516"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"91579.017554413172"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"free"</span><span class="p">:</span><span class="w"> </span><span class="s2">"91579.017554413172"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4014986192463421361"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th style="text-align: left"><strong>PARAMETER</strong></th>
+<th style="text-align: left"><strong>TYPE</strong></th>
+<th style="text-align: left"><strong>Example values</strong></th>
+<th style="text-align: left"><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">balances</td>
+<td style="text-align: left">Object Array</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Query an asset array</td>
+</tr>
+<tr>
+<td style="text-align: left">balances.asset</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">BTC</td>
+<td style="text-align: left">Assets</td>
+</tr>
+<tr>
+<td style="text-align: left">balances.assetId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">BTC</td>
+<td style="text-align: left">Asset ID</td>
+</tr>
+<tr>
+<td style="text-align: left">balances.assetName</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">BTC</td>
+<td style="text-align: left">Asset Name</td>
+</tr>
+<tr>
+<td style="text-align: left">balances.total</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">100.63264</td>
+<td style="text-align: left">Total available funds</td>
+</tr>
+<tr>
+<td style="text-align: left">balances.free</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">100.63264</td>
+<td style="text-align: left">Available funds</td>
+</tr>
+<tr>
+<td style="text-align: left">balances.locked</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">0</td>
+<td style="text-align: left">Frozen funds</td>
+</tr>
+<tr>
+<td style="text-align: left">userId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">4014986192463421361</td>
+<td style="text-align: left">User ID</td>
+</tr>
+</tbody></table>
+<h3 id="Get-Account-Trade-List" class="has-code" style="font-size:24px;font-family:'Helvetica',sans-serif;">
+Get Account Trade List
+</h3>
+
+<p><strong style="color:#008756;font-size:1.25em">GET</strong> <code>https://api-pro.sim.hashkeydev.com/api/v1/account/trades</code></p>
+
+<p><strong>Weight: 5</strong></p>
+
+<p>Query account history and transaction records</p>
+
+<p><strong>Request Parameters</strong></p>
+
+<ul>
+<li>If there is only fromId, It will return trades with IDs bigger than fromId, sorted in descending order.</li>
+<li>If there is only toId. It will return trades with IDs less than toId, sorted in descending order</li>
+<li>If both fromId and toId are provided. It will return trades between fromId and toId, sorted in descending order</li>
+<li>If neither fromId or toId is provided, it will return the latest trade records, sorted in descending order.</li>
+</ul>
+
+<table><thead>
+<tr>
+<th style="text-align: left"><strong>PARAMETER</strong></th>
+<th style="text-align: left"><strong>TYPE</strong></th>
+<th style="text-align: left">Req&#39;d</th>
+<th style="text-align: left"><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Trading pair</td>
+</tr>
+<tr>
+<td style="text-align: left">startTime</td>
+<td style="text-align: left">LONG</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Start Timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left">endTime</td>
+<td style="text-align: left">LONG</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">End Timestamp. Only supports the last 30 days timeframe</td>
+</tr>
+<tr>
+<td style="text-align: left">clientOrderId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Client Order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">fromId</td>
+<td style="text-align: left">LONG</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Starting ID</td>
+</tr>
+<tr>
+<td style="text-align: left">toId</td>
+<td style="text-align: left">LONG</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">End ID</td>
+</tr>
+<tr>
+<td style="text-align: left">limit</td>
+<td style="text-align: left">INT</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Limit of record</td>
+</tr>
+<tr>
+<td style="text-align: left">accountId</td>
+<td style="text-align: left">LONG</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Account ID</td>
+</tr>
+<tr>
+<td style="text-align: left">timestamp</td>
+<td style="text-align: left">LONG</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Timestamp</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Content</strong></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000868574042843648"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1753258121083398"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ticketId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4625196823998763008"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbolName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000868573824739840"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"matchOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"120001.01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"commission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000002"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"commissionAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1753258121180"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isBuyer"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isMaker"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"feeCoinId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeCoinName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000002"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"originFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000002"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"originCoinId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"originCoinName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"feeCoinId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feeAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000002"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feeSupplementaryAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00000634"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"makerRebate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1816094214250944000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hskDeduct"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hskDeductPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th><strong>PARAMETER</strong></th>
+<th><strong>TYPE</strong></th>
+<th><strong>Example values</strong></th>
+<th><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>*</td>
+<td>Object Array</td>
+<td></td>
+<td>Check transaction results</td>
+</tr>
+<tr>
+<td>id</td>
+<td>STRING</td>
+<td>1470930841345474561</td>
+<td>Unique transaction ID</td>
+</tr>
+<tr>
+<td>clientOrderId</td>
+<td>STRING</td>
+<td>999999999800021</td>
+<td>An ID defined by the client for the order, it will be automatically generated if it is not sent in the request</td>
+</tr>
+<tr>
+<td>ticketId</td>
+<td>STRING</td>
+<td>1478144171272585249</td>
+<td>Execution ID, the execution ID is the same for the direction of a single trade.</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>STRING</td>
+<td>BTCUSD</td>
+<td>Trading pair</td>
+</tr>
+<tr>
+<td>symbolName</td>
+<td>STRING</td>
+<td>BTCUSD</td>
+<td>Trading pair name</td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>STRING</td>
+<td>1470930841211329280</td>
+<td>Order ID</td>
+</tr>
+<tr>
+<td>matchOrderId</td>
+<td>STRING</td>
+<td></td>
+<td>//Ignore</td>
+</tr>
+<tr>
+<td>price</td>
+<td>STRING (decimal)</td>
+<td>29851.03</td>
+<td>Price</td>
+</tr>
+<tr>
+<td>qty</td>
+<td>STRING (decimal)</td>
+<td>0.0005</td>
+<td>Quantity</td>
+</tr>
+<tr>
+<td>commission</td>
+<td>STRING (decimal)</td>
+<td>0.02985103</td>
+<td>Commission fee</td>
+</tr>
+<tr>
+<td>commissionAsset</td>
+<td>STRING</td>
+<td>USD</td>
+<td>Currency of commission fee</td>
+</tr>
+<tr>
+<td>time</td>
+<td>STRING (decimal)</td>
+<td>1690084620567</td>
+<td>Millisecond Timestamp — trade time (traded but not yet settled) 撮合成交时间</td>
+</tr>
+<tr>
+<td>isBuyer</td>
+<td>BOOLEAN</td>
+<td>false</td>
+<td>Whether the trade is a buyer</td>
+</tr>
+<tr>
+<td>isMaker</td>
+<td>BOOLEAN</td>
+<td>false</td>
+<td>Whether the trade is a maker</td>
+</tr>
+<tr>
+<td>fee</td>
+<td>Object</td>
+<td></td>
+<td>Fee information</td>
+</tr>
+<tr>
+<td>fee.feeCoinId</td>
+<td>STRING</td>
+<td>USD</td>
+<td>Fee currency</td>
+</tr>
+<tr>
+<td>fee.feeCoinName</td>
+<td>STRING</td>
+<td>USD</td>
+<td>Fee currency name</td>
+</tr>
+<tr>
+<td>fee.fee</td>
+<td>STRING (decimal)</td>
+<td>0.02985103</td>
+<td>Transaction fee amount after HSK deduction</td>
+</tr>
+<tr>
+<td>fee.originFee</td>
+<td>STRING (decimal)</td>
+<td>0.03085103</td>
+<td>The commission fee before HSK deduction.</td>
+</tr>
+<tr>
+<td>fee.originCoinId</td>
+<td>STRING</td>
+<td>USD</td>
+<td>The commission fee before HSK deduction</td>
+</tr>
+<tr>
+<td>fee.originCoinName</td>
+<td>STRING</td>
+<td>USD</td>
+<td>The commission fee coin</td>
+</tr>
+<tr>
+<td>feeCoinId</td>
+<td>STRING</td>
+<td>USD</td>
+<td>Fee currency</td>
+</tr>
+<tr>
+<td>feeAmount</td>
+<td>STRING (decimal)</td>
+<td>0.02985103</td>
+<td>Amount of transaction fee</td>
+</tr>
+<tr>
+<td>feeSupplementaryAmount</td>
+<td>STRING</td>
+<td>0.00000634</td>
+<td>Supplementary commission fee to meet minimum commission fee requirement</td>
+</tr>
+<tr>
+<td>makerRebate</td>
+<td>STRING</td>
+<td>0</td>
+<td>Return</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>STRING</td>
+<td>1545583349011201280</td>
+<td>Account ID</td>
+</tr>
+<tr>
+<td>hskDeduct</td>
+<td>BOOLEAN</td>
+<td>true</td>
+<td>true: successfully deducted HSK  false</td>
+</tr>
+<tr>
+<td>hskDeductPrice</td>
+<td>STRING</td>
+<td>0.001</td>
+<td>commission Coin price / HSK price</td>
+</tr>
+</tbody></table>
+<h3 id="Get-Account-Trade-List-By-ClientOrderId" class="has-code" style="font-size:24px;font-family:'Helvetica',sans-serif;">
+Get Account Trade List By CLientOrderId
+</h3>
+
+<p><strong style="color:#008756;font-size:1.25em">GET</strong> <code>https://api-pro.sim.hashkeydev.com/api/v1/account/tradesByClOrderId</code></p>
+
+<p><strong>Weight: 1</strong></p>
+
+<p>Query account history and transaction records by clientOrderId. Support 30-day data.</p>
+
+<p><strong>Request Parameters</strong></p>
+
+<ul>
+<li>This Endpoint is of lower weight comparing with <a href="#Get-Account-Trade-List">Get Account Trade List</a></li>
+<li>If there is only fromId, It will return trades with IDs bigger than fromId, sorted in descending order.</li>
+<li>If there is only toId. It will return trades with IDs less than toId, sorted in descending order</li>
+<li>If both fromId and toId are provided. It will return trades between fromId and toId, sorted in descending order</li>
+<li>If neither fromId or toId is provided, it will return the latest trade records, sorted in descending order of the Id</li>
+</ul>
+
+<table><thead>
+<tr>
+<th style="text-align: left"><strong>PARAMETER</strong></th>
+<th style="text-align: left"><strong>TYPE</strong></th>
+<th style="text-align: left">Req&#39;d</th>
+<th style="text-align: left"><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">clientOrderId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Client Order ID, do not support bulk query.</td>
+</tr>
+<tr>
+<td style="text-align: left">fromId</td>
+<td style="text-align: left">LONG</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Starting ID</td>
+</tr>
+<tr>
+<td style="text-align: left">toId</td>
+<td style="text-align: left">LONG</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">End ID</td>
+</tr>
+<tr>
+<td style="text-align: left">limit</td>
+<td style="text-align: left">INT</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Limit of record</td>
+</tr>
+<tr>
+<td style="text-align: left">timestamp</td>
+<td style="text-align: left">LONG</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Timestamp</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Content</strong></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000868574042843648"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1753258121083398"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ticketId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4625196823998763008"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbolName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000868573824739840"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"matchOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"120001.01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1753258121180"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isBuyer"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isMaker"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"feeCoinId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeCoinName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000002"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"feeSupplementaryAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00000634"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"makerRebate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1816094214250944000"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th><strong>PARAMETER</strong></th>
+<th><strong>TYPE</strong></th>
+<th><strong>Example values</strong></th>
+<th><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>*</td>
+<td>Object Array</td>
+<td></td>
+<td>Check transaction results</td>
+</tr>
+<tr>
+<td>id</td>
+<td>STRING</td>
+<td>1470930841345474561</td>
+<td>Unique transaction ID</td>
+</tr>
+<tr>
+<td>clientOrderId</td>
+<td>STRING</td>
+<td>999999999800021</td>
+<td>An ID defined by the client for the order, it will be automatically generated if it is not sent in the request</td>
+</tr>
+<tr>
+<td>ticketId</td>
+<td>STRING</td>
+<td>1478144171272585249</td>
+<td>Execution ID, the execution ID is the same for the direction of a single trade.</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>STRING</td>
+<td>BTCUSD</td>
+<td>Trading pair</td>
+</tr>
+<tr>
+<td>symbolName</td>
+<td>STRING</td>
+<td>BTCUSD</td>
+<td>Trading pair name</td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>STRING</td>
+<td>1470930841211329280</td>
+<td>Order ID</td>
+</tr>
+<tr>
+<td>matchOrderId</td>
+<td>STRING</td>
+<td></td>
+<td>//Ignore</td>
+</tr>
+<tr>
+<td>price</td>
+<td>STRING (decimal)</td>
+<td>29851.03</td>
+<td>Price</td>
+</tr>
+<tr>
+<td>qty</td>
+<td>STRING (decimal)</td>
+<td>0.0005</td>
+<td>Quantity</td>
+</tr>
+<tr>
+<td>time</td>
+<td>STRING (decimal)</td>
+<td>1690084620567</td>
+<td>Millisecond Timestamp — trade time (traded but not yet settled) 撮合成交时间</td>
+</tr>
+<tr>
+<td>isBuyer</td>
+<td>BOOLEAN</td>
+<td>false</td>
+<td>Whether the trade is a buyer</td>
+</tr>
+<tr>
+<td>isMaker</td>
+<td>BOOLEAN</td>
+<td>false</td>
+<td>Whether the trade is a maker</td>
+</tr>
+<tr>
+<td>fee</td>
+<td>Object</td>
+<td></td>
+<td>Fee information</td>
+</tr>
+<tr>
+<td>fee.feeCoinId</td>
+<td>STRING</td>
+<td>USD</td>
+<td>Fee currency</td>
+</tr>
+<tr>
+<td>fee.feeCoinName</td>
+<td>STRING</td>
+<td>USD</td>
+<td>Fee currency name</td>
+</tr>
+<tr>
+<td>fee.fee</td>
+<td>STRING (decimal)</td>
+<td>0.02985103</td>
+<td>Transaction fee amount after HSK deduction</td>
+</tr>
+<tr>
+<td>feeSupplementaryAmount</td>
+<td>STRING</td>
+<td>0.00000634</td>
+<td>Supplementary commission fee to meet minimum commission fee requirement</td>
+</tr>
+<tr>
+<td>makerRebate</td>
+<td>STRING</td>
+<td>0</td>
+<td>Return</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>STRING</td>
+<td>1545583349011201280</td>
+<td>Account ID</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
