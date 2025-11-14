@@ -1,5 +1,6 @@
 # Unique header generation
 require './lib/unique_head.rb'
+require 'fileutils'
 
 # Markdown
 set :markdown_engine, :redcarpet
@@ -56,6 +57,27 @@ configure :build do
   activate :minify_css
   activate :minify_javascript
   # activate :gzip
+  
+  # Copy language-specific logo files to build directory
+  # These files need to be explicitly copied since they may not be recognized as resources
+  after_build do
+    source_images_dir = File.join(app.root, 'source', 'images')
+    build_images_dir = File.join(app.root, 'build', 'images')
+    
+    # Ensure build/images directory exists
+    FileUtils.mkdir_p(build_images_dir) unless File.directory?(build_images_dir)
+    
+    # Copy all language-specific logo files (logo.*.png except logo.png)
+    Dir.glob(File.join(source_images_dir, 'logo.*.png')).each do |logo_file|
+      basename = File.basename(logo_file)
+      # Skip the default logo.png as it's already copied by Middleman
+      next if basename == 'logo.png'
+      
+      dest_file = File.join(build_images_dir, basename)
+      FileUtils.cp(logo_file, dest_file) if File.exist?(logo_file)
+      puts "Copied #{basename} to build/images/"
+    end
+  end
 end
 
 # Deploy Configuration

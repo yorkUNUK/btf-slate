@@ -15,6 +15,17 @@ under the License.
 %>
 <% language_tabs = current_page.data.language_tabs || [] %>
 <% page_content = yield %>
+<% 
+  # Pre-reference language-specific logo files so Middleman recognizes them as resources
+  # This ensures they're available in both development and build modes
+  begin
+    current_locale = I18n.locale.to_s
+    logo_with_locale = "logo.#{current_locale}.png"
+    # Try to reference the file - this makes Middleman aware of it
+    image_path(logo_with_locale) rescue nil
+  rescue
+  end
+%>
 <%
   if current_page.data.includes
     current_locale = I18n.locale.to_s
@@ -101,7 +112,48 @@ Internationalization (i18n) support.
       </span>
     </a>
     <div class="toc-wrapper">
-      <%= image_tag "logo.png", class: 'logo' %>
+      <%
+        # Try to find logo with language suffix first (e.g., logo.hk.png, logo.de.png, logo.uae.png, etc.)
+        # Then fall back to default logo.png
+        # Use the same method as the includes section above (line 20)
+        current_locale = I18n.locale.to_s
+        logo_path = "logo.png" # default - always fallback to this
+        
+        # Check if language-specific logo exists in source/images/
+        logo_with_locale = "logo.#{current_locale}.png"
+        file_exists = false
+        logo_file_path = nil
+        begin
+          # Middleman runs from project root, so Dir.pwd should be the project root
+          # Alternatively, we can use app.root if available
+          project_root = Dir.pwd
+          
+          # Verify we're in the right directory by checking for source/images
+          source_images = File.join(project_root, 'source', 'images')
+          unless File.directory?(source_images)
+            # If not, try to find project root by looking for source/images
+            # This handles cases where Middleman might run from a different directory
+            possible_roots = [
+              File.expand_path('..', File.dirname(File.expand_path(__FILE__))),
+              File.expand_path('../..', File.dirname(File.expand_path(__FILE__))),
+              Dir.pwd
+            ]
+            project_root = possible_roots.find { |root| File.directory?(File.join(root, 'source', 'images')) } || Dir.pwd
+          end
+          
+          logo_file_path = File.join(project_root, 'source', 'images', logo_with_locale)
+          
+          # Debug: check if file exists
+          file_exists = File.exist?(logo_file_path)
+          
+          if file_exists
+            logo_path = logo_with_locale
+          end
+        rescue => e
+          # If check fails, use default logo (logo.png)
+        end
+      %>
+      <%= image_tag logo_path, class: 'logo' %>
       <% if language_tabs.any? %>
         <div class="lang-selector">
           <% language_tabs.each do |lang| %>
