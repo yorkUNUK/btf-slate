@@ -41,7 +41,7 @@ set :relative_links, true
 
 # Internationalization support
 activate :i18n, :mount_at_root => false
-redirect "index.html", :to => "./en/index.html"
+redirect "index.html", :to => "./hk/index.html"
 
 # Build Configuration
 configure :build do

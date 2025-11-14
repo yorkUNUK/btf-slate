@@ -17,8 +17,28 @@ under the License.
 <% page_content = yield %>
 <%
   if current_page.data.includes
+    current_locale = I18n.locale.to_s
     current_page.data.includes.each do |include|
-      page_content += partial("includes/#{include}")
+      # Try to find partial with language suffix first (e.g., _testNewOrder.hk.md or _testNewOrder.de.md)
+      # Then fall back to partial without suffix (e.g., _testNewOrder.md)
+      partial_found = false
+      begin
+        # First try with language suffix
+        partial_path = "includes/#{include}.#{current_locale}"
+        page_content += partial(partial_path)
+        partial_found = true
+      rescue => e
+        # If partial with language suffix not found, try without suffix
+        begin
+          partial_path = "includes/#{include}"
+          page_content += partial(partial_path)
+          partial_found = true
+        rescue => e2
+          # If still not found, skip this include
+          # This allows .hk.md files to only appear in hk site, and .de.md files to only appear in de site
+          # Files without language suffix will appear in both sites
+        end
+      end
     end
   end
 %>
