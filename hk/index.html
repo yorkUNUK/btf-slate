@@ -506,6 +506,41 @@ Get Account Trade List By CLientOrderId
 Get Account Trade List By CLientOrderId
 </a>
                           </li>
+                          <li>
+                            <a href="#Query-Account-Type" class="toc-h3 toc-link" data-title="
+Query Account Type
+">
+Query Account Type
+</a>
+                          </li>
+                          <li>
+                            <a href="#Internal-Account-Transfer" class="toc-h3 toc-link" data-title="
+Internal Account Transfer
+">
+Internal Account Transfer
+</a>
+                          </li>
+                          <li>
+                            <a href="#Get-API-Key-Type" class="toc-h3 toc-link" data-title="
+Get API Key Type
+">
+Get API Key Type
+</a>
+                          </li>
+                          <li>
+                            <a href="#Get-Fiat-History" class="toc-h3 toc-link" data-title="
+Get Fiat History
+">
+Get Fiat History
+</a>
+                          </li>
+                          <li>
+                            <a href="#Get-Fund-Statement" class="toc-h3 toc-link" data-title="
+Get Fund Statement
+">
+Get Fund Statement
+</a>
+                          </li>
                       </ul>
                   </li>
               </ul>
@@ -4281,6 +4316,1103 @@ Get Account Trade List By CLientOrderId
 <td>STRING</td>
 <td>1545583349011201280</td>
 <td>Account ID</td>
+</tr>
+</tbody></table>
+<h3 id="Query-Account-Type" class="has-code" style="font-size:24px;font-family:'Helvetica',sans-serif;">
+Query Account Type
+</h3>
+
+<p><strong style="color:#008756;font-size:1.25em">GET</strong> <code>https://api-pro.sim.hashkeydev.com/api/v1/account/type</code></p>
+
+<p><strong>Account Type</strong></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">accountType</th>
+<th style="text-align: left">Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">1</td>
+<td style="text-align: left">Trading Account</td>
+</tr>
+<tr>
+<td style="text-align: left">5</td>
+<td style="text-align: left">Custody Account</td>
+</tr>
+<tr>
+<td style="text-align: left">6</td>
+<td style="text-align: left">Fiat Account</td>
+</tr>
+<tr>
+<td style="text-align: left">7</td>
+<td style="text-align: left">OPT Account</td>
+</tr>
+<tr>
+<td style="text-align: left">9</td>
+<td style="text-align: left">Prefund Account</td>
+</tr>
+<tr>
+<td style="text-align: left">1</td>
+<td style="text-align: left">Sub Main Trading Account</td>
+</tr>
+<tr>
+<td style="text-align: left">5</td>
+<td style="text-align: left">Sub Custody Account</td>
+</tr>
+</tbody></table>
+
+<p><strong>Weight: 5</strong></p>
+
+<p><strong>Request Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>PARAMETER</th>
+<th>TYPE</th>
+<th>Req&#39;d</th>
+<th>Example values</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>LONG</td>
+<td>Y</td>
+<td></td>
+<td>Timestamp</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Content</strong></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1954336770171707136"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Main Trading Account"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1954336770188484352"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1954336770171707137"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custody Account"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1954336770188484352"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1954336770171707138"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fiat Account"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1954336770188484352"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2076829658620461312"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OPT Account"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1954336770188484352"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1954336770171707139"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prefund Account"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1954336770188484352"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1954346689088298752"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sub Main Trading Account"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1954346688375497216"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1954346689088298753"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sub Custody Account"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1954346688375497216"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th style="text-align: left"><strong>PARAMETER</strong></th>
+<th style="text-align: left"><strong>TYPE</strong></th>
+<th style="text-align: left"><strong>Example values</strong></th>
+<th style="text-align: left"><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">*</td>
+<td style="text-align: left">Object Array</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Query subaccount results</td>
+</tr>
+<tr>
+<td style="text-align: left">accountId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">1954336770171707136</td>
+<td style="text-align: left">Account Number</td>
+</tr>
+<tr>
+<td style="text-align: left">accountLabel</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Custody Account</td>
+<td style="text-align: left">Account Label</td>
+</tr>
+<tr>
+<td style="text-align: left">accountType</td>
+<td style="text-align: left">INTEGER</td>
+<td style="text-align: left">1</td>
+<td style="text-align: left">Account Type</td>
+</tr>
+<tr>
+<td style="text-align: left">accountIndex</td>
+<td style="text-align: left">INTEGER</td>
+<td style="text-align: left">0</td>
+<td style="text-align: left">//Ignore</td>
+</tr>
+<tr>
+<td style="text-align: left">userId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">1954336770188484352</td>
+<td style="text-align: left">UserId of the account</td>
+</tr>
+</tbody></table>
+<h3 id="Internal-Account-Transfer" class="has-code" style="font-size:24px;font-family:'Helvetica',sans-serif;">
+Internal Account Transfer
+</h3>
+
+<p><strong><em>This endpoint should be called no more than once per second.</em></strong></p>
+
+<p><strong style="color:#0074e1;font-size:1.25em">POST</strong> <code>https://api-pro.sim.hashkeydev.com/api/v1/account/assetTransfer</code></p>
+
+<p><strong>Weight: 1</strong></p>
+
+<p>Internal asset account transfer. Need to grant the account with &quot;Read/Write Permissioin - Allow internal transfer&quot; authority.</p>
+
+<p><strong>Request Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left"><strong>PARAMETER</strong></th>
+<th style="text-align: left"><strong>TYPE</strong></th>
+<th style="text-align: left">Req &#39;d</th>
+<th style="text-align: left"><strong>Example values</strong></th>
+<th style="text-align: left"><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">fromAccountId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">1467296062716909568</td>
+<td style="text-align: left">Source Account ID</td>
+</tr>
+<tr>
+<td style="text-align: left">toAccountId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">1473231491689395200</td>
+<td style="text-align: left">Destinate Account ID</td>
+</tr>
+<tr>
+<td style="text-align: left">coin</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">USDT</td>
+<td style="text-align: left">Coin</td>
+</tr>
+<tr>
+<td style="text-align: left">quantity</td>
+<td style="text-align: left">STRING(DECIMAL)</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">20</td>
+<td style="text-align: left">Transfer amount</td>
+</tr>
+<tr>
+<td style="text-align: left">remark</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">TestingRemark</td>
+<td style="text-align: left">Remark</td>
+</tr>
+<tr>
+<td style="text-align: left">clientOrderId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">12345678</td>
+<td style="text-align: left">Client unique order identifier</td>
+</tr>
+<tr>
+<td style="text-align: left">timestamp</td>
+<td style="text-align: left">LONG</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">1712317312973</td>
+<td style="text-align: left">Timestamp</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Content</strong></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1716048391349</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1688730736494914304"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th><strong>PARAMETER</strong></th>
+<th><strong>TYPE</strong></th>
+<th><strong>Example values</strong></th>
+<th><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>success</td>
+<td>BOOLEAN</td>
+<td>TRUE</td>
+<td>Whether successful</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>LONG</td>
+<td>1699943911155</td>
+<td>Transfer completed time</td>
+</tr>
+<tr>
+<td>clientOrderId</td>
+<td>STRING</td>
+<td>12345678</td>
+<td>Client unique order identifier</td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>STRING</td>
+<td>1555687946987836672</td>
+<td>Transfer Order ID<br />(Same as Fund statement orderId for transfer)</td>
+</tr>
+</tbody></table>
+<h3 id="Get-API-Key-Type" class="has-code" style="font-size:24px;font-family:'Helvetica',sans-serif;">
+Get API Key Type
+</h3>
+
+<p><strong style="color:#008756;font-size:1.25em">GET</strong> <code>https://api-pro.sim.hashkeydev.com/api/v1/account/checkApiKey</code></p>
+
+<p><strong>Weight: 1</strong></p>
+
+<p><strong>Request Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>PARAMETER</th>
+<th>TYPE</th>
+<th>Req&#39;d</th>
+<th>Example values</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>LONG</td>
+<td>Y</td>
+<td></td>
+<td>Timestamp</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Content</strong></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"master"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th style="text-align: left"><strong>PARAMETER</strong></th>
+<th style="text-align: left"><strong>TYPE</strong></th>
+<th style="text-align: left"><strong>Example values</strong></th>
+<th style="text-align: left"><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">accountType</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">master (Default)</td>
+<td style="text-align: left">Account Type</td>
+</tr>
+</tbody></table>
+<h3 id="Get-Fiat-History" class="has-code" style="font-size:24px;font-family:'Helvetica',sans-serif;">
+Get Fiat History
+</h3>
+
+<p><strong style="color:#008756;font-size:1.25em">GET</strong> <code>https://api-pro.sim.hashkeydev.com/api/v1/account/fiat/history</code></p>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="err">📘</span> <span class="nc">For</span> <span class="nc">Deposit</span><span class="o">,</span> <span class="n">how</span> <span class="n">to</span> <span class="n">fill</span> <span class="err">`</span><span class="n">remark</span><span class="err">`</span> <span class="n">field</span>
+
+<span class="nc">If</span> <span class="n">the</span> <span class="n">remark</span> <span class="n">field</span> <span class="n">is</span> <span class="n">required</span> <span class="n">to</span> <span class="n">be</span> <span class="n">included</span> 
+<span class="n">in</span> <span class="n">the</span> <span class="no">API</span> <span class="n">response</span> <span class="k">for</span> <span class="n">the</span> <span class="n">deposit</span> <span class="n">order</span><span class="o">,</span> <span class="n">it</span> 
+<span class="n">should</span> <span class="n">be</span> <span class="n">filled</span> <span class="n">in</span> <span class="n">according</span> <span class="n">to</span> <span class="n">the</span> <span class="n">following</span> 
+<span class="n">rules</span> <span class="n">when</span> <span class="n">initiating</span> <span class="n">the</span> <span class="n">transfer</span><span class="o">.</span> 
+<span class="no">SCB</span> <span class="n">intra</span><span class="o">-</span><span class="n">bank</span> <span class="n">transfers</span> <span class="n">are</span> <span class="n">not</span> <span class="n">supported</span> <span class="k">for</span> <span class="n">now</span><span class="o">.</span>
+
+<span class="mi">1</span><span class="o">.</span> <span class="nc">Enterprise</span> <span class="nc">Bank</span> <span class="nc">Account</span> <span class="nf">Mode</span> 
+<span class="o">(</span><span class="nc">For</span> <span class="n">example</span><span class="o">,</span> <span class="nc">Chong</span> <span class="nc">Hing</span> <span class="nc">Bank</span><span class="o">),</span> <span class="n">add</span> <span class="nl">REF:</span> <span class="err">`</span><span class="o">/</span><span class="nl">REF:</span><span class="err">####`</span>
+
+<span class="mi">2</span><span class="o">.</span> <span class="nc">Automatic</span> <span class="n">transfer</span> <span class="n">to</span> <span class="n">trading</span> <span class="nl">account:</span> 
+<span class="err">`</span><span class="o">/</span><span class="nl">CMD:</span><span class="n">autoTF_</span><span class="o">{</span><span class="n">trading_accountId</span><span class="o">}</span><span class="n">_</span><span class="o">{</span><span class="n">customer_custom_field</span><span class="o">}</span><span class="err">`</span>
+
+<span class="mi">3</span><span class="o">.</span> <span class="nc">Transaction</span> <span class="nl">remark:</span>
+<span class="err">`</span><span class="o">/</span><span class="nl">MEMO:</span><span class="o">{</span><span class="n">customer_custom_field</span><span class="o">}</span><span class="err">`</span>
+
+<span class="o">*</span><span class="nc">Chong</span> <span class="nc">Hing</span> <span class="nc">Bank</span> <span class="n">sample</span><span class="o">*:</span>
+<span class="err">`</span><span class="o">/</span><span class="nl">REF:</span><span class="no">H2A6U8</span><span class="o">/</span><span class="nl">CMD:</span><span class="n">autoTF_1471090223379184384_customId1</span><span class="o">/</span><span class="nl">MEMO:</span><span class="n">customId2</span><span class="err">`</span>
+
+<span class="o">*</span><span class="no">ZA</span><span class="o">/</span><span class="no">SCB</span> <span class="n">sample</span><span class="o">*:</span>
+<span class="err">`</span><span class="o">/</span><span class="nl">REF:</span><span class="o">/</span><span class="nl">CMD:</span><span class="n">autoTF_1471090223379184384_customId1</span><span class="o">/</span><span class="nl">MEMO:</span><span class="n">customId2</span><span class="err">`</span>
+
+<span class="o">*</span><span class="nc">No</span> <span class="nc">Auto</span> <span class="n">transfer</span><span class="o">,</span> <span class="n">just</span> <span class="n">remark</span><span class="o">*:</span>
+<span class="err">`</span><span class="o">/</span><span class="nl">REF:</span><span class="o">/</span><span class="nl">CMD:</span><span class="o">/</span><span class="nl">MEMO:</span><span class="n">customId</span><span class="err">`</span>
+</code></pre></div>
+<p><strong>Weight: 5</strong></p>
+
+<p><strong>Request Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th><strong>PARAMETER</strong></th>
+<th><strong>TYPE</strong></th>
+<th><strong>Req&#39;d</strong></th>
+<th><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>STRING</td>
+<td>Y</td>
+<td>&quot;deposit&quot;, &quot;withdraw&quot;</td>
+</tr>
+<tr>
+<td>status</td>
+<td>STRING</td>
+<td></td>
+<td>deposit:<br>• &quot;under_review&quot;<br>• &quot;processing&quot;<br>• &quot;successful&quot;<br>• &quot;failed&quot;<br><br>withdraw:<br>• &quot;under_review&quot;<br>• &quot;processing&quot;<br>• &quot;successful&quot;<br>• &quot;failed&quot;</td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>LONG</td>
+<td>Y</td>
+<td>Start timestamp</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>LONG</td>
+<td>Y</td>
+<td>End timestamp</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>STRING</td>
+<td></td>
+<td>&quot;auto&quot;, &quot;manual&quot;; default &quot;auto&quot;<br>For transaction records prior to 2023/9/1 please use manual channel</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>STRING</td>
+<td></td>
+<td>Remark</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>INTEGER</td>
+<td></td>
+<td>Limit</td>
+</tr>
+<tr>
+<td>recvWindow</td>
+<td>LONG</td>
+<td></td>
+<td>Recv Window</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>LONG</td>
+<td>Y</td>
+<td>Timestamp</td>
+</tr>
+<tr>
+<td>clientOrderId</td>
+<td>STRING</td>
+<td></td>
+<td>Can be used for filtering</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Content</strong></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NFW773922940306722816"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/D773922971355262976"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"grossAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"netAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"105"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"successful"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1762325607762"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1762841797000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auto"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567891104aab"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NFW773588989415469056"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/D773589020879171584"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"grossAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"netAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"105"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"successful"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1762245987665"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1762842585000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auto"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567891104aa"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NFW773570664979443712"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/D773570692198510592"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"grossAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"netAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1005"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"processing"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1762241618778"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1762241625000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auto"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567891104"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th><strong>PARAMETER</strong></th>
+<th><strong>TYPE</strong></th>
+<th><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>STRING</td>
+<td>Fiat Order ID, e.g: <code>NFW730739521377169408</code></td>
+</tr>
+<tr>
+<td>type</td>
+<td>STRING</td>
+<td>&quot;deposit&quot;, &quot;withdraw&quot;</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>STRING</td>
+<td>Deposit: The remark message from bank deposit</td>
+</tr>
+<tr>
+<td>asset</td>
+<td>STRING</td>
+<td>&quot;USD&quot; or &quot;HKD&quot;. Fee Asset is the same as the Transaction Asset.</td>
+</tr>
+<tr>
+<td>grossAmount</td>
+<td>STRING</td>
+<td>Deposit/Withdraw order amount</td>
+</tr>
+<tr>
+<td>netAmount</td>
+<td>STRING</td>
+<td>Actual fund in amount<br>Deposit: grossAmount - fee<br>Withdraw: grossAmount + fee</td>
+</tr>
+<tr>
+<td>fee</td>
+<td>STRING</td>
+<td>Deposit / Withdraw fee</td>
+</tr>
+<tr>
+<td>status</td>
+<td>STRING</td>
+<td>deposit:<br>• &quot;under_review&quot;<br>• &quot;processing&quot;<br>• &quot;failed&quot;<br>• &quot;successful&quot;<br>• &quot;withdraw_return&quot;<br><br>withdraw:<br>• &quot;under_review&quot;<br>• &quot;processing&quot;<br>• &quot;failed&quot;<br>• &quot;successful&quot;<br>• &quot;return&quot;</td>
+</tr>
+<tr>
+<td>createdTime</td>
+<td>STRING</td>
+<td>Order Created Timestamp</td>
+</tr>
+<tr>
+<td>updatedTime</td>
+<td>STRING</td>
+<td>Order Updated Timestamp</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>STRING</td>
+<td></td>
+</tr>
+<tr>
+<td>clientOrderId</td>
+<td>STRING</td>
+<td>Client order ID</td>
+</tr>
+</tbody></table>
+<h3 id="Get-Fund-Statement" class="has-code" style="font-size:24px;font-family:'Helvetica',sans-serif;">
+Get Fund Statement
+</h3>
+
+<p><strong style="color:#008756;font-size:1.25em">GET</strong> <code>https://api-pro.sim.hashkeydev.com/api/v1/account/balanceFlow</code></p>
+
+<p><strong>Weight: 3</strong></p>
+
+<p><strong>Request Parameters</strong></p>
+
+<ul>
+<li>Only master account Master API key can call this interface, sub-accounts will return insufficient privilege type error code</li>
+<li>All orders returned are final</li>
+<li>Deposit, Withdrawal failed will not be returned</li>
+<li>Query of trade history supports the past 14 days time range(though the endpoint support up to get 7 days data for each request). The other types support maximum 30 days. Exceeded amount will return error code &quot;Exceed maximum time range of N days&quot;</li>
+<li>Remark can only support up to 128 characters</li>
+</ul>
+
+<table><thead>
+<tr>
+<th style="text-align: left"><strong>PARAMETER</strong></th>
+<th style="text-align: left"><strong>TYPE</strong></th>
+<th style="text-align: left"><strong>Req&#39;d</strong></th>
+<th style="text-align: left"><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">accountId</td>
+<td style="text-align: left">LONG</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Account ID</td>
+</tr>
+<tr>
+<td style="text-align: left">type</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Transaction type:<br />&quot;trade&quot;<br />&quot;deposit&quot;<br />&quot;fiatDeposit&quot;<br />&quot;withdraw&quot;<br />&quot;fiatWithdraw&quot;<br />&quot;transfer&quot;<br />&quot;reversal&quot;<br />&quot;refund&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left">clientOrderId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Corresponds to types: &quot;trade&quot;, &quot;withdraw&quot;, &quot;fiatWithdraw&quot;, &quot;transfer&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left">remark</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Remark</td>
+</tr>
+<tr>
+<td style="text-align: left">startTime</td>
+<td style="text-align: left">LONG</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Start timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left">endTime</td>
+<td style="text-align: left">LONG</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">End timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left">beginId</td>
+<td style="text-align: left">INT</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Start record number. Default: 0<br />E.g. If input ID is 1, return starting ID as 2</td>
+</tr>
+<tr>
+<td style="text-align: left">limit</td>
+<td style="text-align: left">INT</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Limit</td>
+</tr>
+<tr>
+<td style="text-align: left">timestamp</td>
+<td style="text-align: left">LONG</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Timestamp</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Content</strong></p>
+
+<p><strong>Type = trade</strong></p>
+
+<p>Supported for the past 7 days time range</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"47049"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1617382306753847296"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"netBaseAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00015"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"baseCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"baseAssetBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"96.53346265"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"netQuoteAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-9.622275"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quoteCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quoteAssetBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"887623.4732212"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000000225"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"feeCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99999999980097"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1733373323360866560"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tradeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1733373323528638720"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transactTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1721370202000"</span><span class="w">  </span><span class="err">//Trade</span><span class="w"> </span><span class="err">Completed</span><span class="w"> </span><span class="err">time</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"47050"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1617382306753847296"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"netBaseAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.29951"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"baseCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"baseAssetBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"96.83297265"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"netQuoteAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-9984.7019729"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quoteCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quoteAssetBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"679.337974140649999999"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14.97705295935"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"feeCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99999999980098"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1733374982912741632"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tradeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1733374983021793536"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transactTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1721370400000"</span><span class="w"> </span><span class="err">//Trade</span><span class="w"> </span><span class="err">Completed</span><span class="w"> </span><span class="err">time</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th style="text-align: left"><strong>PARAMETER</strong></th>
+<th style="text-align: left"><strong>TYPE</strong></th>
+<th style="text-align: left"><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">id</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Record ID</td>
+</tr>
+<tr>
+<td style="text-align: left">accountId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Account ID</td>
+</tr>
+<tr>
+<td style="text-align: left">type</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">&quot;trade&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left">netBaseAmount</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Order Quantity<br />Default Value =&quot;&quot;<br />Buy direction (+ve)<br />Sell direction (-ve)</td>
+</tr>
+<tr>
+<td style="text-align: left">baseCcy</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Base currency</td>
+</tr>
+<tr>
+<td style="text-align: left">baseAssetBalance</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Base asset balance<br />Default Value =&quot;&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left">netQuoteAmount</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Price * Quantity<br />Default Value =&quot;&quot;<br />Buy direction (-ve)<br />Sell direction (+ve)</td>
+</tr>
+<tr>
+<td style="text-align: left">quoteAssetBalance</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Quote asset balance<br />Default Value =&quot;&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left">quoteCcy</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">E.g. USDT, USDC, USD</td>
+</tr>
+<tr>
+<td style="text-align: left">direction</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">BUY or SELL</td>
+</tr>
+<tr>
+<td style="text-align: left">fee</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Trading fee<br />Default Value = 0</td>
+</tr>
+<tr>
+<td style="text-align: left">feeSupplementaryAmount</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Supplementary commission fee to meet minimum commission fee requirement</td>
+</tr>
+<tr>
+<td style="text-align: left">feeCcy</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">E.g. BTC, ETH, USDC</td>
+</tr>
+<tr>
+<td style="text-align: left">clientOrderId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Client order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">orderId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">tradeId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Trade ID</td>
+</tr>
+<tr>
+<td style="text-align: left">transactTime</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Trade completed and settled time  <br /> 结算完成时间</td>
+</tr>
+</tbody></table>
+
+<p><strong>Type = fiatDeposit/fiatWithdraw</strong></p>
+
+<p>Supported for the past 30 days time range</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1491920242963768578"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fiatDeposit"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"netFiatAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fiatCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fiatBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"897400"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feeCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FD486905037302665216"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transactTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1693895601000"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1491920242963768578"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fiatWithdraw"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"netFiatAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fiatCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fiatBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"797399"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feeCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FW486905166923436032"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transactTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1693895424000"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th style="text-align: left"><strong>PARAMETER</strong></th>
+<th style="text-align: left"><strong>TYPE</strong></th>
+<th style="text-align: left"><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">id</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Record ID</td>
+</tr>
+<tr>
+<td style="text-align: left">accountId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Account ID</td>
+</tr>
+<tr>
+<td style="text-align: left">type</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">&quot;fiatDeposit&quot;, &quot;fiatWithdraw&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left">netFiatAmount</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Fiat Deposit/Withdraw: amount<br />Default Value = 0</td>
+</tr>
+<tr>
+<td style="text-align: left">fiatCcy</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">E.g. HKD, USD</td>
+</tr>
+<tr>
+<td style="text-align: left">fiatBalance</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Fiat balance in the account<br />Default Value = 0</td>
+</tr>
+<tr>
+<td style="text-align: left">fee</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Fee amount</td>
+</tr>
+<tr>
+<td style="text-align: left">feeCcy</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Fee Currency</td>
+</tr>
+<tr>
+<td style="text-align: left">orderId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Fiat Order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">remark</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Remark</td>
+</tr>
+<tr>
+<td style="text-align: left">transactTime</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Fiat Deposit/Withdraw Completed Time</td>
+</tr>
+</tbody></table>
+
+<p><strong>Type = deposit/withdraw/refund</strong></p>
+
+<p>Supported for the past 30 days time range</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"720"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1978966613676937217"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deposit"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"netVaAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8989"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vaCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vaChainType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tron"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vaBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1030784.1498"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feeCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"D768973742990266368"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"txnId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transactTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1761145789691"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"343"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1954346749805043457"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Withdraw"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"netVaAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"180"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vaCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vaChainType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tron"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vaBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feeCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W769152094447452160"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"txnId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3dafba8abd7a7b2d02ac9161b41313931c9bafa18cf8cec2c98b1a4ec300be32"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transactTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1761188210875"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usdttron102303"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"335"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1954346689088298753"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Refund"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"netVaAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1199"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vaCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vaChainType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tron"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vaBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.2697"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feeCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"refund_D768944634495336448"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"txnId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transactTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1761139348000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th style="text-align: left"><strong>PARAMETER</strong></th>
+<th style="text-align: left"><strong>TYPE</strong></th>
+<th style="text-align: left"><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">id</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Record ID</td>
+</tr>
+<tr>
+<td style="text-align: left">accountId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Account ID</td>
+</tr>
+<tr>
+<td style="text-align: left">type</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">&quot;Deposit&quot;, &quot;Withdraw&quot;, &quot;Refund&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left">netVaAmount</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Deposit/Withdraw: amount<br />Default Value = 0</td>
+</tr>
+<tr>
+<td style="text-align: left">vaCcy</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">ETH, BTC, USDC, etc</td>
+</tr>
+<tr>
+<td style="text-align: left">vaChainType</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Tron</td>
+</tr>
+<tr>
+<td style="text-align: left">vaBalance</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Fiat balance in the account<br />Default Value = 0</td>
+</tr>
+<tr>
+<td style="text-align: left">fee</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Deposit/Withdraw Fee<br />Default Value = 0</td>
+</tr>
+<tr>
+<td style="text-align: left">feeCcy</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Fee Currency</td>
+</tr>
+<tr>
+<td style="text-align: left">clientOrderId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">The unique ID assigned by the client</td>
+</tr>
+<tr>
+<td style="text-align: left">orderId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Deposit/Withdraw Order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">txnId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Chain Transaction ID</td>
+</tr>
+<tr>
+<td style="text-align: left">remark</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Remark</td>
+</tr>
+<tr>
+<td style="text-align: left">transactTime</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Deposit/Withdraw Completed Time</td>
+</tr>
+</tbody></table>
+
+<p><strong>Type = transfer</strong></p>
+
+<p>Supported for the past 30 days time range</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2286"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fromAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1471090223379184385"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"toAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1471090223379184384"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"netTransferAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transferCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fromAccountBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1304.36501272"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"toAccountBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6080.570119335"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1944297063069140480"</span><span class="p">,</span><span class="w">       </span><span class="err">//</span><span class="w"> </span><span class="err">Transfer</span><span class="w"> </span><span class="err">order</span><span class="w"> </span><span class="err">ID</span><span class="w">
+    </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transactTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1746514272000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2287"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fromAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1471090223379184385"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"toAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1471090223379184384"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"netTransferAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transferCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fromAccountBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1303.36501272"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"toAccountBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6081.570119335"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1944304593916806656"</span><span class="p">,</span><span class="w">       </span><span class="err">//</span><span class="w"> </span><span class="err">Transfer</span><span class="w"> </span><span class="err">order</span><span class="w"> </span><span class="err">ID</span><span class="w">
+    </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transactTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1746515169000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th style="text-align: left"><strong>PARAMETER</strong></th>
+<th style="text-align: left"><strong>TYPE</strong></th>
+<th style="text-align: left"><strong>DESCRIPTION</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">id</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Record ID</td>
+</tr>
+<tr>
+<td style="text-align: left">fromAccountId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">From Account ID</td>
+</tr>
+<tr>
+<td style="text-align: left">toAccountId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">To Account ID</td>
+</tr>
+<tr>
+<td style="text-align: left">type</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">&quot;transfer&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left">netTransferAmount</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Transfer Amount<br />Default Value = 0</td>
+</tr>
+<tr>
+<td style="text-align: left">transferCcy</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">ETH, BTC, USDC, etc</td>
+</tr>
+<tr>
+<td style="text-align: left">fromAccountBalance</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">From Account balance<br />Default Value = 0</td>
+</tr>
+<tr>
+<td style="text-align: left">toAccountBalance</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">To Account balance<br />Default Value = 0</td>
+</tr>
+<tr>
+<td style="text-align: left">orderId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Transfer OrderID</td>
+</tr>
+<tr>
+<td style="text-align: left">remark</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Remark</td>
+</tr>
+<tr>
+<td style="text-align: left">transactTime</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">Transfer Completed Time</td>
+</tr>
+<tr>
+<td style="text-align: left">clientOrderId</td>
+<td style="text-align: left">STRING</td>
+<td style="text-align: left">An ID defined by the client for the withdrawal order</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
