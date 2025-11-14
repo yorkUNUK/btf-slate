@@ -34,6 +34,7 @@ includes:
   - hk/restapi/Account/getAPIKeyType
   - hk/restapi/Account/getFiatHistory
   - hk/restapi/Account/getFundStatement
+  - hk/restapi/Account/getOPTOrderHistory
   - errors
 
 search: true
