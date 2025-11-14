@@ -29,6 +29,11 @@ includes:
   - hk/restapi/Account/getEODBalance
   - hk/restapi/Account/getAccountTradeList
   - hk/restapi/Account/getAccountTradeListByClId
+  - hk/restapi/Account/queryAccountType
+  - hk/restapi/Account/internalAccountTransfer
+  - hk/restapi/Account/getAPIKeyType
+  - hk/restapi/Account/getFiatHistory
+  - hk/restapi/Account/getFundStatement
   - errors
 
 search: true
