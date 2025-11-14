@@ -220,37 +220,30 @@ a {
     border-top: 1px solid $nav-footer-border-color;
 
     li,a {
-      color: $nav-footer-text;
+      color: #c1c1c1;
       text-decoration: none;
       border: none;
+      font-weight: bold; // 保持加粗字体使其更醒目
     }
 
     a:hover {
       text-decoration: none;
+      color: darken($nav-footer-text, 20%); // 悬停时稍微深一点
     }
 
     li {
-      font-size: 0.8em;
-      line-height: 1.7;
+      font-size: 0.9em; // 稍微增大字体
+      line-height: 2.2; // 增加行高，让每个站点更清晰
       text-decoration: none;
       overflow-x: visible;
-      display: inline;
-      padding: 0
+      display: block; // 改为 block，让每个站点占一行
+      padding: 4px 0; // 添加上下内边距
+      margin: 2px 0; // 添加上下外边距
     }
 
+    // 移除分隔符，因为现在是每行一个
     li::after {
-      /*
-       This has to be space, tab or other
-       breakable white-space character:
-      */
-      content: " ";
-      word-spacing: 1em;
-      background-image: linear-gradient(
-        -0.2turn,
-        transparent 0 calc(50% - 0.03em),
-        currentcolor 0 calc(50% + 0.03em),
-        transparent 0
-      );
+      content: none;
     }
 
     .cta {
